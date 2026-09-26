@@ -49,8 +49,7 @@ Any URL that doesn't match a route shows a friendly message with a link home.
 ### Demo
 A full run: browse the list, click into a coin, view its stats and chart, and hit a bad URL.
 
-<!-- Upload demo.mov on github.com and paste ONLY the generated user-attachments link on the blank line below (no other text) -->
-
+https://github.com/user-attachments/assets/35e1bb3b-51ed-43f6-a05f-43e88be482c5
 
 ## What I practiced
 - Configuring React Router: `BrowserRouter`, `Routes`, `Route`, a dynamic `:param` route, and a `*` no-match route
