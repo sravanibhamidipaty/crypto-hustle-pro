@@ -1,0 +1,449 @@
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.hero {
+  position: relative;
+
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
+
+/* ===== Crypto List styles (Step 4) ===== */
+body {
+  background: black;
+}
+
+.whole-page {
+  padding: 50px;
+  text-align: center;
+  background: black;
+  color: white;
+  min-height: 100vh;
+}
+
+/* search bar */
+.whole-page input[type="text"] {
+  width: 260px;
+  padding: 10px 14px;
+  margin: 10px 0 30px;
+  border: none;
+  border-radius: 8px;
+  background: white;
+  color: black;
+  font-size: 16px;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  margin: 25px auto 75px;
+  padding: 0;
+  max-width: 900px;
+}
+
+li.main-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 15px;
+  border-bottom: solid 2px white;
+  font-size: larger;
+}
+
+.coin-name {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.coin-price {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.icons {
+  padding-right: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+/* ===== Side nav bar (Step 5) ===== */
+.sidenav {
+  height: 100%;
+  width: 25%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #232323;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+/* ===== Color scheme fixes ===== */
+/* The Vite starter index.css ties heading/text colors to the OS light/dark
+   scheme, which made the title and sidebar text render near-black on our
+   black background. Force our own readable colors here. */
+
+.whole-page h1 {
+  color: white;
+}
+
+/* Sidebar text and heading */
+.sidenav,
+.sidenav h3 {
+  color: white;
+}
+
+.sidenav h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 10px 0 18px;
+  text-align: center;
+}
+
+/* News list: white links with subtle dividers between articles */
+.side-list {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.news-article {
+  padding: 14px 8px;
+  border-bottom: 1px solid #3a3a3a;
+  line-height: 1.35;
+}
+
+.news-article a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.news-article a:hover {
+  text-decoration: underline;
+}
+
+/* Override Vite starter #root constraints so the full-width layout
+   (fixed sidebar + main content) can use the whole viewport */
+#root {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border-inline: none;
+  text-align: left;
+}
+
+/* ===== Crypto Hustle Pro additions ===== */
+
+/* Each coin row is now a Link. Make the link fill the row and lay out
+   the name (left) and price (right) at opposite ends like before. */
+.coin-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: white;
+  text-decoration: underline;
+}
+
+.coin-link:hover {
+  color: #cfcfcf;
+}
+
+/* Persistent Home button pinned top-right on every page */
+.home-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  padding: 12px 22px;
+  background: #1a1a1a;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.home-button:hover {
+  background: #2a2a2a;
+}
+
+/* ===== Detail page ===== */
+.detail-page {
+  background: black;
+  color: white;
+  min-height: 100vh;
+}
+
+.coin-detail {
+  padding: 50px 8%;
+  text-align: center;
+}
+
+.coin-detail h1 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.coin-detail .images {
+  width: 60px;
+  height: 60px;
+  margin: 10px auto;
+}
+
+.coin-detail .description {
+  max-width: 1000px;
+  margin: 0 auto;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.coin-detail .algorithm {
+  margin-top: 10px;
+  color: #cfcfcf;
+}
+
+/* Stats table */
+.coin-detail table {
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto 0;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.coin-detail th,
+.coin-detail td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #2b2b2b;
+}
+
+.coin-detail th {
+  color: #6ea8ff;
+  font-weight: 700;
+  width: 40%;
+  background: #141414;
+}
+
+.coin-detail td {
+  color: white;
+}
+
+.coin-detail tr:nth-child(even) th {
+  background: #101010;
+}
+
+.coin-detail a {
+  color: #6ea8ff;
+}
+
+/* ===== Price chart (stretch) ===== */
+.chart-wrap {
+  max-width: 1000px;
+  margin: 50px auto 0;
+}
+
+.chart-wrap h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ===== Not Found page ===== */
+.not-found {
+  min-height: 100vh;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+}
